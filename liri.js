@@ -39,6 +39,12 @@ switch (cmd) {
           var movie = new Movie(srch);
           movie.getMovie(srch);              
         };       
+        if (cmd==='spotify-this-song') {
+          var Songs = require("./songs");
+          if (!srch) { srch = "The Sign"};
+          var song = new Songs(srch);
+          song.getSong(srch);     
+        }
       });
      break;
   case 'my-tweets':
@@ -48,7 +54,6 @@ switch (cmd) {
      twitter.getTweets();
      break; 
   case 'spotify-this-song':
-    //  var spotify = new Spotify(keys.spotify);
     var Songs = require("./songs");
      if (!srch) { srch = "The Sign"};
      var song = new Songs(srch);
